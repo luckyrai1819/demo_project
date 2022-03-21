@@ -1,0 +1,38 @@
+// const {readFile,writeFile}=require('fs')
+const {readFile,writeFile}=require('fs').promises
+
+const util=require('util')
+
+// const readFilePromise=util.promisify(readFile)
+// const getText=(path)=>{
+//     return new Promise((resolve,reject)=>{
+//         readFile(path,'utf8',(err,data)=>{
+//             if(err)
+//             reject(err);
+//             else
+//             resolve(data);
+//         })
+//     })
+// }
+
+const start=async ()=>{
+    const first=await readFile('./content/first.txt');
+    const second=await readFile('./content/second.txt');
+    console.log(first,second)
+}
+
+// const start=async ()=>{
+//     const first=await readFilePromise('./content/first.txt');
+//     const second=await readFilePromise('./content/second.txt');
+//     console.log(first,second)
+// }
+
+start()
+// readFile('./content/first.txt','utf8',(err,result)=>{
+//     if(err)
+//     {
+//         console.log(err);
+//         return;
+//     }
+//     console.log(result);
+// })
